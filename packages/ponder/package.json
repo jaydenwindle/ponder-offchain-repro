@@ -1,0 +1,29 @@
+{
+  "name": "indexer",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "ponder dev",
+    "start": "ponder start",
+    "db": "ponder db",
+    "codegen": "ponder codegen",
+    "serve": "ponder serve",
+    "lint": "eslint .",
+    "typecheck": "tsc"
+  },
+  "dependencies": {
+    "hono": "^4.6.14",
+    "ponder": "^0.8.7",
+    "viem": "^2.21.55"
+  },
+  "devDependencies": {
+    "@types/node": "^20.17.10",
+    "eslint": "^8.57.1",
+    "eslint-config-ponder": "^0.8.7",
+    "typescript": "^5.7.2"
+  },
+  "engines": {
+    "node": ">=18.14"
+  },
+  "packageManager": "pnpm@9.11.0+sha1.4cd20e68438613738e8f2bc9aece61eaa6b3e649"
+}

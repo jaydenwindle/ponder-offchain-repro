@@ -1,6 +1,8 @@
 import { ponder } from "ponder:registry";
 import { graphql } from "ponder";
 
+// can import from "offchain" in here
+
 
 ponder.use("/", graphql());
 ponder.use("/graphql", graphql());

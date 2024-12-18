@@ -6,20 +6,35 @@ settings:
 
 importers:
 
-  .:
+  .: {}
+
+  packages/offchain:
     dependencies:
-      dotenv:
-        specifier: ^16.4.7
-        version: 16.4.7
       drizzle-orm:
-        specifier: ^0.38.2
-        version: 0.38.2(@electric-sql/pglite@0.2.15)(@opentelemetry/api@1.9.0)(@types/pg@8.11.10)(kysely@0.26.3)(pg@8.13.1)(react@18.3.1)
+        specifier: 0.36.4
+        version: 0.36.4(@electric-sql/pglite@0.2.15)(@opentelemetry/api@1.9.0)(@types/pg@8.11.10)(kysely@0.26.3)(pg@8.13.1)(react@18.3.1)
+      ponder:
+        specifier: ^0.8.7
+        version: 0.8.7(@opentelemetry/api@1.9.0)(@types/node@20.17.10)(@types/pg@8.11.10)(hono@4.6.14)(typescript@5.7.2)(viem@2.21.55(typescript@5.7.2))
+    devDependencies:
+      '@types/node':
+        specifier: ^20.17.10
+        version: 20.17.10
+      drizzle-kit:
+        specifier: ^0.30.1
+        version: 0.30.1
+      eslint:
+        specifier: ^8.57.1
+        version: 8.57.1
+      typescript:
+        specifier: ^5.7.2
+        version: 5.7.2
+
+  packages/ponder:
+    dependencies:
       hono:
         specifier: ^4.6.14
         version: 4.6.14
-      pg:
-        specifier: ^8.13.1
-        version: 8.13.1
       ponder:
         specifier: ^0.8.7
         version: 0.8.7(@opentelemetry/api@1.9.0)(@types/node@20.17.10)(@types/pg@8.11.10)(hono@4.6.14)(typescript@5.7.2)(viem@2.21.55(typescript@5.7.2))
@@ -30,12 +45,34 @@ importers:
       '@types/node':
         specifier: ^20.17.10
         version: 20.17.10
+      eslint:
+        specifier: ^8.57.1
+        version: 8.57.1
+      eslint-config-ponder:
+        specifier: ^0.8.7
+        version: 0.8.7(@typescript-eslint/eslint-plugin@6.21.0(@typescript-eslint/parser@6.21.0(eslint@8.57.1)(typescript@5.7.2))(eslint@8.57.1)(typescript@5.7.2))(@typescript-eslint/parser@6.21.0(eslint@8.57.1)(typescript@5.7.2))(eslint@8.57.1)
+      typescript:
+        specifier: ^5.7.2
+        version: 5.7.2
+
+  packages/third:
+    dependencies:
+      dotenv:
+        specifier: ^16.4.7
+        version: 16.4.7
+      drizzle-orm:
+        specifier: 0.36.4
+        version: 0.36.4(@electric-sql/pglite@0.2.15)(@opentelemetry/api@1.9.0)(@types/pg@8.11.10)(kysely@0.26.3)(pg@8.13.1)(react@18.3.1)
+      pg:
+        specifier: ^8.13.1
+        version: 8.13.1
+    devDependencies:
+      '@types/node':
+        specifier: ^20.17.10
+        version: 20.17.10
       '@types/pg':
         specifier: ^8.11.10
         version: 8.11.10
-      drizzle-kit:
-        specifier: ^0.30.1
-        version: 0.30.1
       eslint:
         specifier: ^8.57.1
         version: 8.57.1
@@ -1155,98 +1192,6 @@ packages:
     peerDependencies:
       '@aws-sdk/client-rds-data': '>=3'
       '@cloudflare/workers-types': '>=3'
-      '@electric-sql/pglite': '>=0.2.0'
-      '@libsql/client': '>=0.10.0'
-      '@libsql/client-wasm': '>=0.10.0'
-      '@neondatabase/serverless': '>=0.10.0'
-      '@op-engineering/op-sqlite': '>=2'
-      '@opentelemetry/api': ^1.4.1
-      '@planetscale/database': '>=1'
-      '@prisma/client': '*'
-      '@tidbcloud/serverless': '*'
-      '@types/better-sqlite3': '*'
-      '@types/pg': '*'
-      '@types/react': '>=18'
-      '@types/sql.js': '*'
-      '@vercel/postgres': '>=0.8.0'
-      '@xata.io/client': '*'
-      better-sqlite3: '>=7'
-      bun-types: '*'
-      expo-sqlite: '>=14.0.0'
-      knex: '*'
-      kysely: '*'
-      mysql2: '>=2'
-      pg: '>=8'
-      postgres: '>=3'
-      prisma: '*'
-      react: '>=18'
-      sql.js: '>=1'
-      sqlite3: '>=5'
-    peerDependenciesMeta:
-      '@aws-sdk/client-rds-data':
-        optional: true
-      '@cloudflare/workers-types':
-        optional: true
-      '@electric-sql/pglite':
-        optional: true
-      '@libsql/client':
-        optional: true
-      '@libsql/client-wasm':
-        optional: true
-      '@neondatabase/serverless':
-        optional: true
-      '@op-engineering/op-sqlite':
-        optional: true
-      '@opentelemetry/api':
-        optional: true
-      '@planetscale/database':
-        optional: true
-      '@prisma/client':
-        optional: true
-      '@tidbcloud/serverless':
-        optional: true
-      '@types/better-sqlite3':
-        optional: true
-      '@types/pg':
-        optional: true
-      '@types/react':
-        optional: true
-      '@types/sql.js':
-        optional: true
-      '@vercel/postgres':
-        optional: true
-      '@xata.io/client':
-        optional: true
-      better-sqlite3:
-        optional: true
-      bun-types:
-        optional: true
-      expo-sqlite:
-        optional: true
-      knex:
-        optional: true
-      kysely:
-        optional: true
-      mysql2:
-        optional: true
-      pg:
-        optional: true
-      postgres:
-        optional: true
-      prisma:
-        optional: true
-      react:
-        optional: true
-      sql.js:
-        optional: true
-      sqlite3:
-        optional: true
-
-  drizzle-orm@0.38.2:
-    resolution: {integrity: sha512-eCE3yPRAskLo1WpM9OHpFaM70tBEDsWhwR/0M3CKyztAXKR9Qs3asZlcJOEliIcUSg8GuwrlY0dmYDgmm6y5GQ==}
-    peerDependencies:
-      '@aws-sdk/client-rds-data': '>=3'
-      '@cloudflare/workers-types': '>=4'
       '@electric-sql/pglite': '>=0.2.0'
       '@libsql/client': '>=0.10.0'
       '@libsql/client-wasm': '>=0.10.0'
@@ -3407,15 +3352,6 @@ snapshots:
       - supports-color
 
   drizzle-orm@0.36.4(@electric-sql/pglite@0.2.15)(@opentelemetry/api@1.9.0)(@types/pg@8.11.10)(kysely@0.26.3)(pg@8.13.1)(react@18.3.1):
-    optionalDependencies:
-      '@electric-sql/pglite': 0.2.15
-      '@opentelemetry/api': 1.9.0
-      '@types/pg': 8.11.10
-      kysely: 0.26.3
-      pg: 8.13.1
-      react: 18.3.1
-
-  drizzle-orm@0.38.2(@electric-sql/pglite@0.2.15)(@opentelemetry/api@1.9.0)(@types/pg@8.11.10)(kysely@0.26.3)(pg@8.13.1)(react@18.3.1):
     optionalDependencies:
       '@electric-sql/pglite': 0.2.15
       '@opentelemetry/api': 1.9.0
