@@ -12,17 +12,24 @@
     "typecheck": "tsc"
   },
   "dependencies": {
+    "dotenv": "^16.4.7",
+    "drizzle-orm": "^0.38.2",
+    "hono": "^4.6.14",
+    "pg": "^8.13.1",
     "ponder": "^0.8.7",
-    "hono": "^4.5.0",
-    "viem": "^2.21.3"
+    "viem": "^2.21.55"
   },
   "devDependencies": {
-    "@types/node": "^20.10.0",
-    "eslint": "^8.54.0",
+    "@types/node": "^20.17.10",
+    "@types/pg": "^8.11.10",
+    "drizzle-kit": "^0.30.1",
+    "eslint": "^8.57.1",
     "eslint-config-ponder": "^0.8.7",
-    "typescript": "^5.3.2"
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2"
   },
   "engines": {
     "node": ">=18.14"
-  }
+  },
+  "packageManager": "pnpm@9.11.0+sha1.4cd20e68438613738e8f2bc9aece61eaa6b3e649"
 }
