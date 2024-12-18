@@ -1,0 +1,46 @@
+{
+  "id": "5cc2a41f-e5e9-4795-ad7c-5af89f50f2eb",
+  "prevId": "842d863d-8709-45f1-b8c2-f3cd001a1055",
+  "version": "7",
+  "dialect": "postgresql",
+  "tables": {
+    "offchain.metadata": {
+      "name": "metadata",
+      "schema": "offchain",
+      "columns": {
+        "tokenId": {
+          "name": "tokenId",
+          "type": "numeric(78)",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "metadata": {
+          "name": "metadata",
+          "type": "json",
+          "primaryKey": false,
+          "notNull": false
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
+    }
+  },
+  "enums": {},
+  "schemas": {
+    "offchain": "offchain"
+  },
+  "sequences": {},
+  "roles": {},
+  "policies": {},
+  "views": {},
+  "_meta": {
+    "columns": {},
+    "schemas": {},
+    "tables": {}
+  }
+}

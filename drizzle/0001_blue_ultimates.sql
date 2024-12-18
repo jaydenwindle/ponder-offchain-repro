@@ -1,0 +1,1 @@
+ALTER TABLE "offchain"."metadata" ALTER COLUMN "tokenId" SET DATA TYPE numeric(78);

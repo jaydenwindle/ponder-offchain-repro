@@ -13,10 +13,10 @@
   },
   "dependencies": {
     "dotenv": "^16.4.7",
-    "drizzle-orm": "^0.38.2",
+    "drizzle-orm": "0.36.4",
     "hono": "^4.6.14",
     "pg": "^8.13.1",
-    "ponder": "^0.8.7",
+    "ponder": "link:ponder/packages/core",
     "viem": "^2.21.55"
   },
   "devDependencies": {

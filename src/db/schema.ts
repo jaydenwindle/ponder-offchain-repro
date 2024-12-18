@@ -1,21 +1,20 @@
-import { integer, json, pgSchema, bigint } from "drizzle-orm/pg-core";
+import { json, pgSchema } from "drizzle-orm/pg-core";
 import { relations } from 'drizzle-orm';
+import { bigint } from "ponder"
 
-// we want to be able to import drizzle types and tables from ponder schema
-// import { bigint } from "ponder"
-// import { token } from "../../ponder.schema"
+import { token } from "../../ponder.schema"
 
 export const offchainSchema = pgSchema("offchain");
 
 export const metadataTable = offchainSchema.table("metadata", {
-  tokenId: bigint({ mode: 'bigint' }).primaryKey(),
+  tokenId: bigint().primaryKey(),
   metadata: json(),
 });
 
 // we want to define relationships between offchain tables and ponder tables in the same db
-// export const metadataRelations = relations(metadataTable, ({ one }) => ({
-//   token: one(token, {
-//     fields: [metadataTable.tokenId],
-//     references: [token.id],
-//   }),
-// }));
+export const metadataRelations = relations(metadataTable, ({ one }) => ({
+  token: one(token, {
+    fields: [metadataTable.tokenId],
+    references: [token.id],
+  }),
+}));
