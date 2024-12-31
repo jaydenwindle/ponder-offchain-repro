@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "hono": "^4.6.14",
-    "ponder": "^0.8.7",
+    "ponder": "0.9.0-next.1",
     "viem": "^2.21.55"
   },
   "devDependencies": {

@@ -1,6 +1,9 @@
 import { relations } from "drizzle-orm";
 import * as offchainSchema from "../offchain/schema";
-import * as ponderSchema from "../ponder/ponder.schema";
+import * as _ponderSchema from "../ponder/ponder.schema";
+import { setDatabaseSchema } from "@ponder/client";
+
+const ponderSchema = setDatabaseSchema(_ponderSchema, "prod");
 
 // Note: we need this because "ponder.schema" can't be executed by drizzle-kit, and we 
 // also don't want drizzle to generate migrations for onchain tables.

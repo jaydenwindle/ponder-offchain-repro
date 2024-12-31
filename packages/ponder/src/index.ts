@@ -1,9 +1,6 @@
 import { ponder } from "ponder:registry";
 import schema from "ponder:schema";
 
-import { db } from "../../third"
-import { metadataTable } from "../../offchain/schema"
-
 ponder.on("ERC721:Transfer", async ({ event, context }) => {
   // Create an Account for the sender, or update the balance if it already exists.
   await context.db
@@ -24,12 +21,6 @@ ponder.on("ERC721:Transfer", async ({ event, context }) => {
       owner: event.args.to,
     })
     .onConflictDoUpdate({ owner: event.args.to });
-
-  // insert data into offchain db that persists between indexing runs
-  await db.insert(metadataTable).values({
-    tokenId: event.args.id.toString(),
-    metadata: { hello: "world", tokenId: Number(event.args.id) }
-  }).onConflictDoNothing()
 
   // Create a TransferEvent.
   await context.db.insert(schema.transferEvent).values({
